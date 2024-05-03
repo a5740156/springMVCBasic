@@ -59,7 +59,16 @@ public class RequestParamController {
     }
 
     @RequestMapping("/model-attribute-v1")
+    @ResponseBody
     public String modelAttributeV1(@ModelAttribute HelloData helloData) {
+
+        log.info("username = {} , age = {}", helloData.getUsername(), helloData.getAge());
+        return "ok";
+    }
+
+    @RequestMapping("/model-attribute-v2")
+    @ResponseBody
+    public String modelAttributeV2(HelloData helloData) {
 
         log.info("username = {} , age = {}", helloData.getUsername(), helloData.getAge());
         return "ok";
