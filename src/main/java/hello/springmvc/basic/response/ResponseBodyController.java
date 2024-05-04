@@ -19,7 +19,7 @@ public class ResponseBodyController {
         response.getWriter().write("ok");
     }
 
-    @GetMapping("/response-body-string-v1")
+    @GetMapping("/response-body-string-v2")
     public ResponseEntity<String> responseBodyV2() throws IOException {
         return new ResponseEntity<String>("ok", HttpStatus.OK);
     }
@@ -30,7 +30,7 @@ public class ResponseBodyController {
         return "ok";
     }
 
-    @GetMapping("response-body-json-v1")
+    @GetMapping("/response-body-json-v1")
     public ResponseEntity<HelloData> responseBodyJsonV1() {
         HelloData helloData = new HelloData();
         helloData.setUsername("hello");
@@ -40,7 +40,7 @@ public class ResponseBodyController {
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("response-body-json-v2")
+    @GetMapping("/response-body-json-v2")
     public HelloData responseBodyJsonV2() {
         HelloData helloData = new HelloData();
         helloData.setUsername("hello");
